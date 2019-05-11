@@ -70,35 +70,14 @@ MonoBehaviour:
   splatterEnabled: 1
   splatterDecals:
   - decals:
-    - {fileID: 2100000, guid: 70062ce0abc87524aac73486097c6d74, type: 2}
-    - {fileID: 2100000, guid: c7b8c10c9034dc74c847efc0e726e4cf, type: 2}
-    - {fileID: 2100000, guid: a7b4df171e5fdd6408b5823b6106352a, type: 2}
-    - {fileID: 2100000, guid: 292e2c0caaabe0543b654be5f70d5eb1, type: 2}
-    - {fileID: 2100000, guid: 2fbd43daba913ec4d9683d53fee38fa4, type: 2}
-    - {fileID: 2100000, guid: 5a4f9a5bed438cf4fb17835af3933468, type: 2}
-    - {fileID: 2100000, guid: f1c8640aac8abf745b35b3f9981bbbe1, type: 2}
-    - {fileID: 2100000, guid: cd1bbe8da83efce4a8a8a7e40fe0c8da, type: 2}
+    - {fileID: 2100000, guid: 5ebf5202abd75d34aafe4190b8d21f11, type: 2}
+    - {fileID: 2100000, guid: 11fa519a168ae9b418d9f13366887058, type: 2}
     decalSize: 0.7
     decalDepth: 1.4
     numberOfDecals: 2
     horizontalSpread: 0.5
     verticalSpread: 0.6
     overrideTag: 
-  - decals:
-    - {fileID: 2100000, guid: 70062ce0abc87524aac73486097c6d74, type: 2}
-    - {fileID: 2100000, guid: c7b8c10c9034dc74c847efc0e726e4cf, type: 2}
-    - {fileID: 2100000, guid: a7b4df171e5fdd6408b5823b6106352a, type: 2}
-    - {fileID: 2100000, guid: 292e2c0caaabe0543b654be5f70d5eb1, type: 2}
-    - {fileID: 2100000, guid: 2fbd43daba913ec4d9683d53fee38fa4, type: 2}
-    - {fileID: 2100000, guid: 5a4f9a5bed438cf4fb17835af3933468, type: 2}
-    - {fileID: 2100000, guid: f1c8640aac8abf745b35b3f9981bbbe1, type: 2}
-    - {fileID: 2100000, guid: cd1bbe8da83efce4a8a8a7e40fe0c8da, type: 2}
-    decalSize: 0.7
-    decalDepth: 1.4
-    numberOfDecals: 5
-    horizontalSpread: 0.7
-    verticalSpread: 0.8
-    overrideTag: EnemyHead
   splatterParticleSystem: {fileID: 7903543503027219978, guid: 4e3178931425d9b4bba48aed6566095c,
     type: 3}
   splatterRange: 6
@@ -605,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9bce6d291f2dbc4d88f313e73e46d0e, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
