@@ -1,0 +1,78 @@
+Thank you for downloading the FPS Decal System Asset. This document is designed to provide some guidelines and infomation on how to use the system.
+
+Included within the asset package is:
+	1. A folder named FPS_Decal_System, this contains all of the asset specific code, materials and prefabs.
+	2. A standard asset folder, this is the Unity provided standard assets and is used for movement controls and the feature scene.
+	   These assets are completely optional and only exist to provide examples and should be replaced with custom code.
+
+The FPS_Decal_System folder contains a number of sub-folders that contain various useful files: 
+	1. The animations folder is used for the feature scene to test moving targets and as such can be ignored for standard use. 
+	2. The materials folder contains some example materials for use with the projector system for decals, as well as some standard materials
+	   used on environmental objects in the feature scene.
+	3. The prefabs folder contains some default objects such as particle systems, player controllers and enemies. It also contains an example
+	   projectile and a basic pool manager. These prefabs may be used as is or combined with your own code in order to improve upon their
+	   functions.
+	4. The scenes folder contains a single feature scene, designed to show off all the potential uses for the system, along with lighting data.
+	5. The scripts folder contains all the code for the system, inluding some basic FPS controls, projectile behaviour, the decal system itself
+	   and a basic pool system.
+	6. Shaders contains the projector shaders for the system to work, see the 'Projector Shader Guidelines.txt' for mroe information on how
+	   they work.
+	7. Sprite contains some premade basic bullethole and splatter sprites. These also act as examples on how images must be imported.
+	8. Textures are used with the projector shaders.
+
+Creating a new decal material:
+	1. This system makes use of the projector system in Unity so as such has some requirements for creating new materials.
+	2. Materials must use either the Projector/Multiply or the Projector/Light shaders provided.
+	3. A 'Cookie' texture and a 'Falloff' texture must be placed in the relevant box.
+	4. Cookie textures are the sprites provided in the sprites folder and the falloff texture can be found in the texures folder.
+	5. Refer to the 'Projector Shader Guidelines.txt' on how to set up the textures.
+	6. Cookies must have white backgrounds instead of transparency and have white borders to the texture.
+
+Using the System:
+	1. The decal system script contains all the code required to place a decal in the world.
+	2. You can either inherit from this script with a custom script or use the ShootingScript which already inherits from DecalSystem.
+	3. The decal system has a number of settings that can be changed from within the editor. 
+	4. The system also makes heavy use of layers and tags so these may need to be changed on any object you want to work with the system.
+
+Setting up decals:
+	1. The 'Decal Settings' contains all the settings for placing a decal in the world.
+	2. The size field is how many different decals you want to have available, this should be set to at least one.
+	3. Inside each of these collections is some additional per decal settings.
+	4. The decals collection is an array of materials that will be randomly selected from on decal placement, this can be any number of kept
+	   at 1 if you don't want multiple materials being used.
+	5. The decal size is the orthagraphic size of the projector, this effect how large the decal is in the world.
+	6. The override tag is used to place decals differently depending on the tag of the object that is hit. If left blank this will be the
+	   default decal to place. If multiple fields are left blank the first one will be the default and if none are left blank the first one
+	   will also be used. This allows you to have different decal bullet holes on different tagged objects.
+	7. The decal depth changes the far clipping plane of the projector, this can be adjusted based on how thick the surface hit is. A low 
+	   depth will have decals fading away quicker and a high depth will make them fade slower. This is useful in case your decals can be
+	   seen on the other side of objects or they are fading away too soon on very curvy objects.
+
+Setting up splatter decals:
+	1. Splatter decals work in very much the same way as the normal decals but their is a few more settings to customise.
+	2. The number of decals is how many splatter decals appear with each event. This can make the amount of splatter seem more or less without
+	   having to change the sprites themselves.
+	3. The vertical and horizontal spread is how much random range for the distance between splatter decals. This can be changed to make decals
+	   take up more space or be more dense.
+	4. Whether splatter decals are on can also be toggled.
+
+Setting up bleed effects:
+	1. The bleed efect can be toggled on and the layers that are able to spawn a particle can be selected. 
+	2. A bleed particle effect should be placed in the available field. A default one is provided for you in the prefabs folder.
+	3. A bleed chance slider will change the percentage chance of a bleed particle spawning on hit. 
+
+Using the FPS functionality:
+	1. The system also comes with some basic FPS functionality.
+	2. The ShootingScript has code for both raycast and ballistic based shooting. Simply place this script on your player.
+	3. The ballistic settings are found on the projectile behaviour script which should be place on any bullet projectiles you want to use. 
+	4. The projectile behaviour script has speed and gravity settings as well as all the settings from the decal system (it inherits from
+	   DecalSystem). These settings will be transfered over automatically from the shooting script providing the projectile prefab is placed
+	   in the ballistic shooting settings on the shooting script.
+
+Setting up the Pool Manager:
+	1. The system makes use of a basic pool manager.
+	2. This is a prefab and should be placed in the scene before anything else can be done. 
+	3. Inside the pool manager in the the inspector, place the DecalProjector prefab (or a custom projector) and set the time each decal will
+	   remain in the scene and the max number that can exist in the scene at once.
+	4. This system is rather basic and could be upgraded further if needs be.
+
